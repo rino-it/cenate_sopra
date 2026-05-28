@@ -13,39 +13,39 @@ type Card = {
 const CARDS: Card[] = [
   {
     num: '01',
-    ttl: 'Render interno',
+    ttl: 'Render esterno',
     src: '/images/gallery/gallery-01.webp',
-    alt: 'Vista 3/4 frontale EDEL',
+    alt: 'Render esterno frontale della villa, vista valle',
   },
   {
     num: '02',
-    ttl: 'Render architettonico',
+    ttl: 'Soggiorno doppia altezza',
     src: '/images/gallery/gallery-02.webp',
-    alt: 'Giardino lato collina con tavolo apparecchiato',
+    alt: 'Soggiorno a doppia altezza con vetrate a tutta parete',
   },
   {
     num: '03',
-    ttl: 'Vista aerea',
+    ttl: 'Vista valle dalla terrazza',
     src: '/images/gallery/gallery-03.webp',
-    alt: 'Facciata frontale EDEL',
+    alt: 'Vista valle e Orobie dalla terrazza principale',
   },
   {
     num: '04',
-    ttl: 'Fronte sud',
+    ttl: 'Piscina + giardino',
     src: '/images/gallery/gallery-04.webp',
-    alt: 'Retro edificio EDEL',
+    alt: 'Piscina 12×4 m e giardino paesaggistico',
   },
   {
     num: '05',
-    ttl: 'Dettaglio architettonico',
+    ttl: 'Cucina + isola',
     src: '/images/gallery/gallery-05.webp',
-    alt: 'Terrazza panoramica EDEL',
+    alt: 'Cucina open space con isola centrale e affaccio giardino',
   },
   {
     num: '06',
-    ttl: 'Pianta tipo quadrilocale',
-    src: '/images/units/unit-quadri-p2.webp',
-    alt: 'Pianta tipo quadrilocale 2° piano',
+    ttl: 'Pianta villa',
+    src: '/images/gallery/gallery-06.webp',
+    alt: 'Pianta architettonica dei tre livelli',
   },
 ]
 
