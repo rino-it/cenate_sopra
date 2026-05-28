@@ -2,7 +2,7 @@ const SUPABASE_URL = 'https://yajhearqopveqldaanii.supabase.co'
 const SUPABASE_ANON_KEY = 'sb_publishable_MpK71SWk8r1GdBVZ22NUBw_8a_JPzL0'
 const SUPABASE_TABLE = 'leads'
 
-export const PROJECT_ID = 'edel-ponteranica'
+export const PROJECT_ID = 'cenate-sopra'
 
 export type LeadPayload = Record<string, unknown>
 
