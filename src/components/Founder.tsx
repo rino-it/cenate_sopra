@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react'
 
 const STATS: Array<{ value: number; suffix?: string; label: string }> = [
-  { value: 60, suffix: '+', label: 'anni di mestiere' },
-  { value: 87, label: 'cantieri firmati' },
-  { value: 12, label: 'unità EDEL' },
+  { value: 55, suffix: '+', label: 'anni di mestiere' },
+  { value: 120, suffix: '+', label: 'cantieri firmati' },
+  { value: 1, label: 'villa, unica' },
 ]
 
 function useCounter(targetRef: React.RefObject<HTMLElement | null>, target: number) {
@@ -77,7 +77,7 @@ export default function Founder() {
       <div className="founder__inner founder__inner--banner reveal">
         <blockquote className="founder__quote">
           <p>
-            "Una casa è fatta bene quando dura cinquant'anni senza chiedere scuse. È il nostro standard."
+            "Una casa è ben fatta quando, vent'anni dopo, non chiede nulla. È lo standard di Edilvertova."
           </p>
         </blockquote>
 
