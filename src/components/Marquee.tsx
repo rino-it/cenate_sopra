@@ -1,10 +1,11 @@
 const ITEMS = [
-  '12 unità',
-  '110–280 m²',
-  'classe A4',
-  'Ponteranica',
-  'Bergamo',
-  'dal 1962',
+  'Cenate Sopra',
+  'Una villa',
+  'Vista valle',
+  'Wellness privato',
+  'Classe A4',
+  'Sismica Cl.4',
+  'Edilvertova · dal 1969',
 ]
 
 export default function Marquee() {
