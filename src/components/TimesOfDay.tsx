@@ -19,7 +19,7 @@ const STATES: TodState[] = [
     title: 'L\'alba sulle vigne.',
     body: 'La luce arriva dalla pianura. Bergamo non c\'è ancora.',
     textColor: '#1a1a1a',
-    img: '/images/tod/dawn.jpg',
+    img: '/images/tod/dawn.webp',
     alt: 'Alba sulle colline di Cenate Sopra — pianura bergamasca in lontananza',
   },
   {
@@ -28,7 +28,7 @@ const STATES: TodState[] = [
     title: 'Mezzogiorno.',
     body: 'Le Orobie alle spalle. Cenate Sopra al sole. La giornata aperta davanti.',
     textColor: '#1a1a1a',
-    img: '/images/tod/day.jpg',
+    img: '/images/tod/day.webp',
     alt: 'Mezzogiorno a Cenate Sopra — Orobie e vigne',
   },
   {
@@ -37,7 +37,7 @@ const STATES: TodState[] = [
     title: 'Le sette e dieci.',
     body: 'Il sole sparisce dietro le valli. Il vino è già aperto.',
     textColor: '#f5f5f0',
-    img: '/images/tod/dusk.jpg',
+    img: '/images/tod/dusk.webp',
     alt: 'Tramonto sulla Val Cavallina visto da Cenate Sopra',
   },
   {
@@ -46,7 +46,7 @@ const STATES: TodState[] = [
     title: 'Le ventidue.',
     body: 'Le luci di Bergamo, in fondo. Sopra di voi, solo le stelle.',
     textColor: '#f5f5f0',
-    img: '/images/tod/night.jpg',
+    img: '/images/tod/night.webp',
     alt: 'Vista notturna da Cenate Sopra — luci di Bergamo in lontananza',
   },
 ]

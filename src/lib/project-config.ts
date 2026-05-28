@@ -19,8 +19,8 @@ export const PROJECT_CONFIG = {
   agentEmail: 'bg2e3@tecnorete.it',
   agentWhatsAppNumber: '393465746387',
   agentHours: 'Lun–Ven · 9:00–19:30',
-  agencyAddress: '[Via Ospedale, 1, 24069]',
-  agencyCity: '[Trescore Balneario (BG)]',
+  agencyAddress: 'Via Ospedale 1',
+  agencyCity: '24069 Trescore Balneario (BG)',
 
   // Asset
   logoPath: '/images/logo/logo_cenate_sopra.png',
