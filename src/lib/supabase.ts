@@ -1,6 +1,7 @@
+import { PROJECT_CONFIG } from './project-config'
+
 const SUPABASE_URL = 'https://yajhearqopveqldaanii.supabase.co'
 const SUPABASE_ANON_KEY = 'sb_publishable_MpK71SWk8r1GdBVZ22NUBw_8a_JPzL0'
-const SUPABASE_TABLE = 'leads'
 
 export const PROJECT_ID = 'cenate-sopra'
 
@@ -30,7 +31,7 @@ async function postToTable(table: string, body: Record<string, unknown>): Promis
 }
 
 export async function sendLead(payload: LeadPayload): Promise<boolean> {
-  return postToTable(SUPABASE_TABLE, payload as Record<string, unknown>)
+  return postToTable(PROJECT_CONFIG.leadsTable, payload as Record<string, unknown>)
 }
 
 export async function subscribeNewsletter(email: string, source: string): Promise<boolean> {
@@ -43,7 +44,7 @@ export async function subscribeNewsletter(email: string, source: string): Promis
 }
 
 export async function trackBrochureDownload(email: string | null, source: string): Promise<boolean> {
-  return postToTable('brochure_downloads', {
+  return postToTable(PROJECT_CONFIG.brochureTable, {
     email: email ? email.trim() : null,
     source_section: source,
     page_url: typeof window !== 'undefined' ? window.location.href : null,
@@ -52,7 +53,7 @@ export async function trackBrochureDownload(email: string | null, source: string
 }
 
 export async function requestCallback(name: string, phone: string, timeSlot: string): Promise<boolean> {
-  return postToTable('callback_requests', {
+  return postToTable(PROJECT_CONFIG.callbackTable, {
     nome: name.trim(),
     telefono: phone.trim(),
     time_slot: timeSlot,

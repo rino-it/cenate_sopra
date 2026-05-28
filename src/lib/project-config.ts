@@ -31,6 +31,12 @@ export const PROJECT_CONFIG = {
   // Brochure PDF (inviato post-form-submit via email, NON link diretto)
   brochurePath: '/brochure-cenate-sopra.pdf',
 
+  // Supabase tables (project-dedicated, pattern <project>_<table>)
+  // Future landings: create cenate_*-style tables and update these 3 fields.
+  leadsTable: 'cenate_leads',
+  callbackTable: 'cenate_callback_requests',
+  brochureTable: 'cenate_brochure_downloads',
+
   // Supabase data tagging (usato dai componenti che inviano lead)
   leadSource: 'landing_cenate_sopra',
 
