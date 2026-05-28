@@ -9,102 +9,81 @@ type QA = {
 
 const FAQS: QA[] = [
   {
-    q: 'Le soluzioni sono già tutte disponibili?',
+    q: 'La villa è disponibile o già impegnata?',
     a: (
       <>
-        <p><strong>No. Alcune sono già oggetto di forte interesse.</strong></p>
-        <p>In questa fase la scelta è ancora ampia, ma la disponibilità cambia rapidamente. Per questo motivo le richieste vengono gestite in ordine di arrivo.</p>
+        <p><strong>In questa fase è ancora libera.</strong></p>
+        <p>Le manifestazioni di interesse vengono gestite in ordine d'arrivo: chi entra prima ha più margine su personalizzazioni e tempistica.</p>
       </>
     ),
     schema:
-      'No. Alcune soluzioni sono già oggetto di forte interesse. In questa fase la scelta è ancora ampia, ma la disponibilità cambia rapidamente. Le richieste vengono gestite in ordine di arrivo.',
+      'In questa fase è ancora libera. Le manifestazioni di interesse vengono gestite in ordine d\'arrivo: chi entra prima ha più margine su personalizzazioni e tempistica.',
   },
   {
-    q: 'Posso scegliere finiture e personalizzazioni?',
+    q: 'Posso personalizzare materiali e distribuzione?',
     a: (
       <>
-        <p><strong>Sì, ma dipende dal momento in cui blocchi l'immobile.</strong></p>
-        <p>Prima intervieni, più margine hai per personalizzare spazi e finiture secondo le tue esigenze. Aspettare significa, spesso, dover accettare scelte già definite.</p>
+        <p><strong>Sì, finché siamo in fase strutturale.</strong></p>
+        <p>Più presto bloccate la villa, più ampio è il margine per intervenire su materiali, distribuzione interna, scelte di capitolato.</p>
       </>
     ),
     schema:
-      "Sì, ma dipende dal momento in cui blocchi l'immobile. Prima intervieni, più margine hai per personalizzare. Aspettare significa accettare scelte già definite.",
+      'Sì, finché siamo in fase strutturale. Più presto bloccate la villa, più ampio è il margine per intervenire su materiali, distribuzione e capitolato.',
   },
   {
-    q: 'Come funziona la prenotazione di una soluzione?',
+    q: 'Quando avviene la consegna?',
     a: (
       <>
-        <p>Dopo la consulenza, se trovi la soluzione giusta per te, puoi <strong>bloccarla</strong>. Questo ti permette di:</p>
-        <ul>
-          <li>fermare il prezzo attuale</li>
-          <li>evitare che venga proposta ad altri</li>
-          <li>prenderti il tempo necessario per definire tutto con calma</li>
-        </ul>
+        <p>Lo stato lavori e il cronoprogramma sono nel dossier completo.</p>
+        <p><strong>La data prevista di consegna viene confermata in fase di trattativa</strong>, in funzione delle personalizzazioni richieste.</p>
       </>
     ),
     schema:
-      "Dopo la consulenza, se trovi la soluzione giusta per te, puoi bloccarla. Questo ti permette di fermare il prezzo, evitare che venga proposta ad altri, prenderti il tempo per definire tutto con calma.",
+      'Lo stato lavori e il cronoprogramma sono nel dossier completo. La data prevista di consegna viene confermata in trattativa, in funzione delle personalizzazioni richieste.',
   },
   {
-    q: 'I prezzi sono destinati a cambiare?',
+    q: 'Il prezzo è negoziabile?',
     a: (
       <>
-        <p><strong>In operazioni come questa, è normale.</strong></p>
-        <p>Con l'avanzamento dei lavori e la riduzione delle disponibilità, le condizioni iniziali tendono a non essere più replicabili. Chi entra prima, di solito, ha un vantaggio concreto.</p>
+        <p><strong>Il prezzo è uno.</strong></p>
+        <p>La trattativa è sulle personalizzazioni: capitolato, scelte materiali, integrazioni wellness. Una villa singola si vende una volta sola.</p>
       </>
     ),
     schema:
-      "In operazioni come questa è normale. Con l'avanzamento dei lavori e la riduzione delle disponibilità, le condizioni iniziali non sono più replicabili. Chi entra prima ha un vantaggio concreto.",
+      'Il prezzo è uno. La trattativa è sulle personalizzazioni: capitolato, scelte materiali, integrazioni wellness.',
   },
   {
     q: 'Che garanzie ho sulla qualità costruttiva?',
     a: (
       <>
-        <p>Il progetto prevede edifici in <strong>classe A4</strong> con impianti di ultima generazione. Questo significa:</p>
-        <ul>
-          <li>alti standard di isolamento termico e acustico</li>
-          <li>comfort abitativo costante tutto l'anno</li>
-          <li>riduzione significativa dei consumi</li>
-        </ul>
-        <p>In più, hai tutte le garanzie previste per legge sulle nuove costruzioni.</p>
+        <p>Classe A4, sismica Cl.4, garanzie di legge sulle nuove costruzioni, polizza decennale postuma.</p>
+        <p><strong>Edilvertova è attiva sul mercato bergamasco da oltre 55 anni</strong>: i cantieri firmati sono visitabili.</p>
       </>
     ),
     schema:
-      "Edifici in classe A4 con impianti di ultima generazione: alti standard di isolamento, comfort abitativo costante, riduzione significativa dei consumi. In più, tutte le garanzie previste per legge sulle nuove costruzioni.",
+      'Classe A4, sismica Cl.4, garanzie di legge sulle nuove costruzioni, polizza decennale postuma. Edilvertova è attiva sul mercato bergamasco da oltre 55 anni e i cantieri firmati sono visitabili.',
   },
   {
     q: 'È un buon investimento, oltre che una casa?',
     a: (
       <>
-        <p><strong>Se guardi i trend attuali, la risposta è sì.</strong></p>
-        <p>Zona in sviluppo + nuova infrastruttura + alta efficienza energetica = immobili sempre più richiesti nel tempo.</p>
-        <p>Tradotto: <strong>maggiore tenuta del valore</strong> e migliore rivendibilità.</p>
+        <p><strong>Cenate Sopra è zona in apprezzamento.</strong></p>
+        <p>Le ville singole di pregio in collina bergamasca hanno tenuto e accresciuto valore rispetto al decennio scorso. La rivendibilità di un prodotto unico, in zona protetta, è strutturalmente alta.</p>
       </>
     ),
     schema:
-      "Sì. Zona in sviluppo, nuove infrastrutture e alta efficienza energetica rendono questi immobili sempre più richiesti nel tempo. Tradotto: maggiore tenuta del valore e migliore rivendibilità.",
+      'Cenate Sopra è zona in apprezzamento. Le ville singole di pregio in collina bergamasca hanno tenuto valore. La rivendibilità di un prodotto unico in zona protetta è strutturalmente alta.',
   },
   {
     q: 'Quanto tempo ho per decidere?',
     a: (
       <>
-        <p><strong>Meno di quanto pensi.</strong></p>
-        <p>Le opportunità migliori vengono scelte per prime. Aspettare troppo, spesso, significa dover rivedere le proprie aspettative.</p>
+        <p><strong>Meno di quanto pensiate.</strong></p>
+        <p>Le ville singole non si replicano: quando un compratore qualificato la sceglie, l'opportunità si chiude. Quindici minuti di telefonata bastano per capire se vale la pena approfondire.</p>
       </>
     ),
     schema:
-      "Meno di quanto pensi. Le opportunità migliori vengono scelte per prime. Aspettare troppo significa dover rivedere le proprie aspettative.",
-  },
-  {
-    q: "Cosa succede se aspetto ancora un po'?",
-    a: (
-      <>
-        <p>Succede quello che succede sempre.</p>
-        <p><strong>Torni — e la soluzione che ti aveva colpito non c'è più.</strong></p>
-      </>
-    ),
-    schema:
-      "Succede quello che succede sempre: torni, e la soluzione che ti aveva colpito non c'è più.",
+      'Meno di quanto pensiate. Le ville singole non si replicano: quando un compratore qualificato la sceglie, l\'opportunità si chiude.',
   },
 ]
 
@@ -178,7 +157,7 @@ export default function FAQ() {
 
       <div className="faq-cta-banner reveal">
         <h3 className="faq-cta-title serif">
-          Vuoi capire se c'è ancora la <span className="ital">soluzione giusta</span> per te?
+          Volete capire se la villa <span className="ital">fa per voi</span>?
         </h3>
         <p className="faq-cta-sub">
           Bastano pochi minuti per capire se ha senso approfondire.
@@ -188,7 +167,7 @@ export default function FAQ() {
           className="faq-cta-btn"
           onClick={(e) => handleAnchor(e, '#contatti')}
         >
-          Richiedi le disponibilità aggiornate
+          Richiedi il dossier
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
             <path d="M5 12h14M13 6l6 6-6 6" />
           </svg>
@@ -197,15 +176,7 @@ export default function FAQ() {
 
       <footer className="faq-footer reveal">
         <p>
-          Altre domande? Scrivete su WhatsApp a{' '}
-          <a
-            href="https://wa.me/393332895941?text=Ciao%2C%20ho%20una%20domanda%20su%20EDEL%20Ponteranica"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Massimo Brissoni
-          </a>{' '}
-          — risponde direttamente.
+          Altre domande? Scriveteci dal form qui sotto — risposta entro 24 ore lavorative.
         </p>
       </footer>
 
