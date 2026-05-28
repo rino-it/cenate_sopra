@@ -11,7 +11,6 @@ import TimesOfDay from './components/TimesOfDay'
 import Bento from './components/Bento'
 import Units from './components/Units'
 import Founder from './components/Founder'
-import Gallery from './components/Gallery'
 import Location from './components/Location'
 import Finishes from './components/Finishes'
 import CallbackPanel from './components/CallbackPanel'
@@ -34,7 +33,6 @@ function AppInner() {
       <Bento />
       <Units />
       <Founder />
-      <Gallery />
       <Location />
       <Finishes />
       <CallbackPanel />
