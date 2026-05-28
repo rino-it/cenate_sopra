@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Step 2 - Esecuzione SQL e setup Supabase</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: #fafaf9;
+    color: #1a1a1a;
+    padding: 32px 20px;
+    line-height: 1.55;
+  }
+  .container { max-width: 920px; margin: 0 auto; }
+  .step-banner {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #1c1917;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .step-banner .num {
+    background: white; color: #1c1917;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+  }
+  h1 { font-size: 24px; margin-bottom: 8px; font-weight: 700; }
+  .subtitle { color: #666; font-size: 14px; margin-bottom: 28px; }
+
+  .phase {
+    background: white;
+    border: 1px solid #e7e5e4;
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-bottom: 18px;
+  }
+  .phase-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .phase-num {
+    background: #1c1917;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .phase-title {
+    font-size: 17px;
+    font-weight: 600;
+  }
+  .phase-time {
+    margin-left: auto;
+    font-size: 12px;
+    color: #78716c;
+    background: #f5f5f4;
+    padding: 4px 10px;
+    border-radius: 12px;
+  }
+
+  .substep {
+    padding: 12px 16px;
+    background: #fafaf9;
+    border: 1px solid #e7e5e4;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+  .substep-num {
+    background: white;
+    border: 1.5px solid #1c1917;
+    color: #1c1917;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 12px;
+  }
+  .substep-content {
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+  .substep-content b { color: #1c1917; }
+
+  .mono {
+    font-family: 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 12.5px;
+    background: #f5f5f4;
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+
+  .ui-path {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #1c1917;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    margin: 4px 0;
+  }
+  .ui-path .arr { opacity: 0.5; font-size: 10px; }
+
+  .file-box {
+    background: linear-gradient(180deg, #f0fdf4 0%, white 100%);
+    border: 1.5px solid #bbf7d0;
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin: 14px 0;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .file-icon {
+    width: 44px; height: 44px;
+    background: #16a34a;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+  .file-info { flex: 1; }
+  .file-name { font-weight: 600; font-size: 13.5px; margin-bottom: 2px; }
+  .file-desc { font-size: 12px; color: #57534e; }
+
+  .verify-box {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-top: 12px;
+    font-size: 13px;
+    color: #1e3a8a;
+  }
+  .verify-box .vt { font-weight: 700; margin-bottom: 6px; }
+
+  .warn-box {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-top: 12px;
+    font-size: 13px;
+    color: #78350f;
+  }
+
+  .secret-box {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #7f1d1d;
+    margin-top: 12px;
+  }
+  .secret-box b { color: #7f1d1d; }
+
+  .creds-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 12.5px;
+    border: 1px solid #e7e5e4;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .creds-table th, .creds-table td {
+    padding: 9px 12px;
+    text-align: left;
+    border-bottom: 1px solid #f5f5f4;
+  }
+  .creds-table th {
+    background: #f5f5f4;
+    font-weight: 600;
+    font-size: 11px;
+    color: #44403c;
+  }
+  .creds-table .placeholder {
+    background: #fffbeb;
+    border: 1px dashed #fde68a;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: 'SF Mono', Menlo, monospace;
+    font-size: 11px;
+    color: #78716c;
+    display: inline-block;
+  }
+
+  .next {
+    margin-top: 28px;
+    padding: 20px 22px;
+    background: #1c1917;
+    color: white;
+    border-radius: 10px;
+  }
+  .next .nl {
+    font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.8px; opacity: 0.6; margin-bottom: 6px;
+  }
+  .next .nt { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+  .next .nd { font-size: 13px; opacity: 0.85; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="step-banner"><span class="num">2</span> Setup Supabase: tabelle + storage</div>
+  <h1>Cosa fare nel tuo nuovo account Supabase</h1>
+  <p class="subtitle">3 fasi sequenziali. Tempo totale: ~15 minuti. Tutto via interfaccia grafica.</p>
+
+  <!-- ============ FASE A: PROGETTO ============ -->
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-num">A</div>
+      <div class="phase-title">Crea l'account e il progetto</div>
+      <div class="phase-time">~5 min</div>
+    </div>
+
+    <div class="substep">
+      <div class="substep-num">1</div>
+      <div class="substep-content">
+        Vai su <a href="https://supabase.com" target="_blank"><span class="mono">supabase.com</span></a> → <b>Start your project</b> → registrati con la tua email dedicata (quella che vuoi tenere separata dagli altri 2 account).
+      </div>
+    </div>
+
+    <div class="substep">
+      <div class="substep-num">2</div>
+      <div class="substep-content">
+        Una volta dentro la dashboard, click <b>"New project"</b>. Compila:<br>
+        • <b>Name:</b> <span class="mono">email-agent</span> (o quello che preferisci)<br>
+        • <b>Database password:</b> generala random e <b>SALVALA</b> in un password manager. È diversa dalle password mail. Ti servirà solo se accederai al DB direttamente.<br>
+        • <b>Region:</b> <span class="mono">Frankfurt (eu-central-1)</span><br>
+        • <b>Plan:</b> <b>Free</b>
+      </div>
+    </div>
+
+    <div class="substep">
+      <div class="substep-num">3</div>
+      <div class="substep-content">
+        Aspetta 1-2 minuti che il progetto si avvii (vedrai una rotellina). Quando vedi la dashboard del progetto sei pronto per la fase B.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FASE B: SQL ============ -->
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-num">B</div>
+      <div class="phase-title">Esegui il file SQL: crea le 4 tabelle</div>
+      <div class="phase-time">~3 min</div>
+    </div>
+
+    <div class="file-box">
+      <div class="file-icon">SQL</div>
+      <div class="file-info">
+        <div class="file-name">email_agent_schema.sql</div>
+        <div class="file-desc">File pronto da incollare. Crea 4 tabelle, 1 vista, 5 indici, e popola aziende + caselle email.</div>
+      </div>
+    </div>
+
+    <div class="substep">
+      <div class="substep-num">1</div>
+      <div class="substep-content">
+        Nel menu laterale a sinistra, click sull'icona <b>SQL Editor</b> (icona <span class="mono">&lt;/&gt;</span>).
+        <div><span class="ui-path">Sidebar <span class="arr">▸</span> SQL Editor</span></div>
+      </div>
+    </div>
+
+    <div class="substep">
+      <div class="substep-num">2</div>
+      <div class="substep-content">
+        Click <b>"+ New query"</b> in alto a sinistra.
+      </div>
+    </div>
+
+    <div class="substep">
+      <div class="substep-num">3</div>
+      <div class="substep-content">
+        Apri il file <span class="mono">email_agent_schema.sql</span> nel tuo editor di testo (anche Blocco Note va bene), <b>copia tutto</b> e <b>incollalo</b> nell'area dello SQL Editor di Supabase.
+      </div>
+    </div>
+
+    <div class="substep">
+      <div class="substep-num">4</div>
+      <div class="substep-content">
+        Click <b>"Run"</b> in basso a destra (oppure Ctrl+Enter / Cmd+Enter).
+      </div>
+    </div>
+
+    <div class="verify-box">
+      <div class="vt">Come capire se è andato tutto bene</div>
+      In basso, sotto l'editor, deve apparire un messaggio verde <b>"Success. No rows returned"</b>. Se vedi errori in rosso fai screenshot e mandameli, sistemiamo insieme.
+    </div>
+
+    <div class="substep" style="margin-top: 14px;">
+      <div class="substep-num">5</div>
+      <div class="substep-content">
+        <b>Verifica visiva (opzionale ma consigliata):</b><br>
+        Vai su <span class="ui-path">Sidebar <span class="arr">▸</span> Table Editor</span>. Devi vedere 4 tabelle: <span class="mono">aziende</span>, <span class="mono">caselle_email</span>, <span class="mono">inbox_raw</span>, <span class="mono">inbox_triage</span>. Click su <span class="mono">aziende</span>: dovresti vedere 3 righe (EDV, EDC, HON). Click su <span class="mono">caselle_email</span>: dovresti vedere 5 righe.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FASE C: STORAGE ============ -->
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-num">C</div>
+      <div class="phase-title">Crea il bucket Storage per gli allegati</div>
+      <div class="phase-time">~2 min</div>
+    </div>
+
+    <div class="substep">
+      <div class="substep-num">1</div>
+      <div class="substep-content">
+        Nel menu laterale, click <b>Storage</b>.
+        <div><span class="ui-path">Sidebar <span class="arr">▸</span> Storage</span></div>
+      </div>
+    </div>
+
+    <div class="substep">
+      <div class="substep-num">2</div>
+      <div class="substep-content">
+        Click <b>"New bucket"</b> in alto.
+      </div>
+    </div>
+
+    <div class="substep">
+      <div class="substep-num">3</div>
+      <div class="substep-content">
+        Compila:<br>
+        • <b>Name:</b> <span class="mono">email-attachments</span><br>
+        • <b>Public bucket:</b> <b>NO</b> (lascialo OFF — gli allegati delle email non devono essere pubblici!)<br>
+        • Tutto il resto lascia di default.<br>
+        Click <b>"Create bucket"</b>.
+      </div>
+    </div>
+
+    <div class="warn-box">
+      <b>Importante:</b> il bucket DEVE essere privato. Se per errore lo crei pubblico, gli allegati delle tue mail (incluse fatture, contratti, dati sensibili) sarebbero accessibili da chiunque conoscesse il link.
+    </div>
+  </div>
+
+  <!-- ============ FASE D: CREDENZIALI ============ -->
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-num">D</div>
+      <div class="phase-title">Recupera le credenziali del progetto</div>
+      <div class="phase-time">~3 min</div>
+    </div>
+
+    <div class="substep">
+      <div class="substep-num">1</div>
+      <div class="substep-content">
+        Nel menu laterale, click sull'icona <b>ingranaggio (Project Settings)</b> in basso a sinistra → poi <b>API</b>.
+        <div><span class="ui-path">Settings <span class="arr">▸</span> API</span></div>
+      </div>
+    </div>
+
+    <div class="substep">
+      <div class="substep-num">2</div>
+      <div class="substep-content">
+        Annota su un foglio (o password manager) i seguenti valori. Ti serviranno allo Step 3 e Step 6.
+      </div>
+    </div>
+
+    <table class="creds-table">
+      <thead>
+        <tr><th style="width:38%;">Cosa</th><th>Dove lo trovi</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Project URL</b><br><span style="font-size:11px;color:#78716c;">è pubblico, non sensibile</span></td>
+          <td>Box "Project URL" → click "Copy"<br><span class="placeholder">https://xxxxxx.supabase.co</span></td>
+        </tr>
+        <tr>
+          <td><b>service_role key</b><br><span style="font-size:11px;color:#dc2626;">SEGRETA, mai condividere</span></td>
+          <td>Box "Project API keys" → riga "service_role" → click "Reveal" → "Copy"<br><span class="placeholder">eyJhbGciOi... (lunga ~200 caratteri)</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="secret-box">
+      <b>Sicurezza service_role key:</b> questa chiave permette a chi la possiede di leggere/scrivere/cancellare qualunque cosa nel tuo database, bypassando tutte le protezioni. <b>Trattala come la password della tua banca</b>: salvala in un password manager, mai in chat con me, mai in Slack/Email/WhatsApp, mai in un documento Google. La useremo SOLO nei GitHub Secrets (cifrati) e nel pannello LangSmith (cifrato).
+    </div>
+  </div>
+
+  <!-- ============ NEXT ============ -->
+  <div class="next">
+    <div class="nl">Quando hai finito tutte e 4 le fasi</div>
+    <div class="nt">Scrivimi: "fatto, ho il Project URL"</div>
+    <div class="nd">
+      <b>Non incollarmi né l'URL né la service_role key:</b> mi basta sapere che le hai. Allo Step 3 (script Python che scarica le mail) ti dirò esattamente dove vanno inserite, in modo che restino sempre cifrate.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
