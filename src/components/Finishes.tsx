@@ -23,48 +23,48 @@ const BLOCKS: Block[] = [
       </>
     ),
     intro:
-      'Il calcestruzzo si autosigilla, le murature respirano. Una palazzina che invecchia bene perché nasce bene.',
+      'Calcestruzzo autosigillante, murature che respirano. Una villa che invecchia bene perché nasce bene.',
     brands: ['Penetron', 'Ytong Climagold', 'Wolf Haus', 'Eternoivica'],
-    spec: 'Sismica Cl. 4 · Acustica 40 dB · Porta blindata Cl. 4',
+    spec: 'Sismica Cl.4 · Acustica 40 dB · Porta blindata Cl.4',
   },
   {
     num: '02',
     cat: 'Clima & Energia',
     title: (
       <>
-        Bollette quasi <span className="ital">azzerate</span>.
+        Bollette <span className="ital">azzerate</span>.
       </>
     ),
     intro:
-      'Pompa di calore autonoma per riscaldamento, raffrescamento e acqua calda. Pavimento radiante a bassa temperatura. Fotovoltaico già pronto.',
+      'Pompa di calore, pavimento radiante, fotovoltaico con accumulo.',
     brands: ['Immergas', 'Rehau Speed', 'Sharp'],
-    spec: 'Classe A4 · 3 kW FV base · Accumulo predisposto · Auto el. predisp.',
+    spec: 'Classe A4 · FV + accumulo · Auto elettrica predisposta',
   },
   {
     num: '03',
-    cat: 'Rivestimenti & Finiture',
+    cat: 'Materiali nobili',
     title: (
       <>
-        Cose che <span className="ital">invecchiano bene</span>.
+        Cose che <span className="ital">durano</span>.
       </>
     ),
     intro:
-      'Parquet rovere Listone XL, sanitari sospesi, rubinetterie cromate, doccia filo-pavimento in cristallo 8 mm. Selezione personale presso showroom convenzionati.',
-    brands: ['Garofoli', 'Ideal Standard Connect', 'Grohe BauEdge', 'Geberit Up 320'],
-    spec: 'Rovere prefinito 2 strati · Piatto doccia in resina minerale',
+      'Pietra di Sarnico, rovere fumé, travertino, ottone brunito. Selezionati nelle showroom convenzionate.',
+    brands: ['Pietra di Sarnico', 'Rovere fumé', 'Travertino', 'Ottone brunito'],
+    spec: 'Parquet rovere XL · Pietra naturale interni-esterni',
   },
   {
     num: '04',
-    cat: 'Smart & Connettività',
+    cat: 'Smart & Wellness',
     title: (
       <>
-        Domotica che <span className="ital">non spaventa</span>.
+        Domotica <span className="ital">che non spaventa</span>.
       </>
     ),
     intro:
-      'Placche eleganti, app per controllare luci e tapparelle, videocitofono con risposta dallo smartphone. Smart quando serve, normale quando vuoi.',
-    brands: ['BTicino Living Now', 'BTicino Videocitofono'],
-    spec: 'App Home+ Control · Videocitofono WiFi · Telecamere predisp.',
+      'BTicino Living Now, predisposizione SPA, climatizzazione zonale. Smart quando serve, semplice quando volete.',
+    brands: ['BTicino Living Now', 'KNX', 'Predisp. SPA'],
+    spec: 'App Home+ Control · Videocitofono WiFi · Clima wellness',
   },
 ]
 
@@ -120,13 +120,13 @@ export default function Finishes() {
   )
 
   useEffect(() => {
-    sessionStorage.removeItem('edel_request_capitolato')
+    sessionStorage.removeItem('cenate_request_dossier')
   }, [])
 
   const handleCapitolato = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
-    sessionStorage.setItem('edel_request_capitolato', 'true')
-    window.dispatchEvent(new CustomEvent('edel:request-capitolato'))
+    sessionStorage.setItem('cenate_request_dossier', 'true')
+    window.dispatchEvent(new CustomEvent('cenate:request-dossier'))
     if (lenis) {
       lenis.scrollTo('#contatti', { offset: -80, duration: 1.6 })
     } else {
@@ -174,13 +174,13 @@ export default function Finishes() {
 
         <div className="finishes-cube__cta">
           <a href="#contatti" onClick={handleCapitolato} className="finishes-cube__btn">
-            Ottieni il capitolato
+            Ottieni il dossier completo
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
               <path d="M5 12h14M13 6l6 6-6 6" />
             </svg>
           </a>
           <p className="finishes-cube__note">
-            Quindici minuti al telefono per conoscerci. Poi Giuseppe Rinaldi (il costruttore) o Massimo Brissoni (l'agenzia) le mandano il capitolato completo, su misura per le sue esigenze.
+            Quindici minuti al telefono per conoscervi. Poi il consulente dedicato vi manda il dossier completo — quaranta pagine di scelte, calibrate sul vostro interesse.
           </p>
         </div>
       </div>
