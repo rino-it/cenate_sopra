@@ -1,76 +1,68 @@
-import { useRef, type CSSProperties, type MouseEvent } from 'react'
+import { useRef, type CSSProperties } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
-import { useLenis } from '../providers/SmoothScrollProvider'
 
-type Unit = {
+type Zone = {
   num: string
   name: string
   img: string | null
   imgAlt: string
   specs: string
-  price: string
   body: string
 }
 
-const UNITS: Unit[] = [
+const ZONES: Zone[] = [
   {
-    num: '1.B',
-    name: 'Bilocale',
+    num: '01',
+    name: 'Zona giorno',
     img: null,
     imgAlt: '',
-    specs: '65–75 m² · 1 camera · 1 bagno · loggia',
-    price: '170.000',
-    body:
-      'Per chi torna all’essenziale senza rinunciare alla qualità. Pied-à-terre o prima base a Ponteranica.',
+    specs: '~105 m² · doppia altezza · vetrate scorrevoli · camino',
+    body: 'Il cuore della casa. Dove la giornata comincia e finisce.',
   },
   {
-    num: '2.T',
-    name: 'Trilocale',
+    num: '02',
+    name: 'Zona notte',
     img: null,
     imgAlt: '',
-    specs: '90–110 m² · 2 camere · 2 bagni · ampio living',
-    price: '295.000',
-    body:
-      'Il taglio che si adatta a tutto. Living luminoso aperto sulla cucina, due camere, doppi servizi, terrazzo abitabile.',
+    specs: '4 camere · 4 bagni · cabina armadio · lavanderia',
+    body: 'Tutte con bagno e cabina. Due sul giardino, due sulla vista valle.',
   },
   {
-    num: '3.Q',
-    name: 'Quadrilocale',
-    img: '/images/units/unit-quadri-pt.webp',
-    imgAlt: 'Quadrilocale piano terra EDEL — vista sul giardino privato',
-    specs: '120–145 m² · 3 camere · 2 bagni · giardino o terrazza',
-    price: '345.000',
-    body:
-      'Spazio senza eccessi. Tre camere, ampio soggiorno, doppi servizi. Al piano terra con giardino privato; ai piani superiori con terrazza.',
+    num: '03',
+    name: 'Wellness',
+    img: null,
+    imgAlt: '',
+    specs: 'piscina · sauna · bagno turco · palestra',
+    body: 'Acqua, pietra, calore. La fine giornata che si scrive da sola.',
   },
   {
-    num: '4.A',
-    name: 'Attico',
-    img: '/images/units/unit-attico.webp',
-    imgAlt: 'Attico EDEL — terrazza panoramica e vista su Bergamo Alta',
-    specs: '160–185 m² · piano nobile · terrazza panoramica',
-    price: '570.000',
-    body:
-      'Edizione di un solo esemplare. Vista aperta sulla Città Alta, terrazza panoramica, doppia esposizione. La casa che si sceglie una volta sola.',
+    num: '04',
+    name: 'Outdoor',
+    img: null,
+    imgAlt: '',
+    specs: 'lotto ~2.500 m² · piscina 12×4 m · pergolato · barbecue',
+    body: 'Il giardino come quarta stanza. Da vivere tutto l\'anno.',
+  },
+  {
+    num: '05',
+    name: 'Servizi',
+    img: null,
+    imgAlt: '',
+    specs: 'garage doppio · cantina · ripostiglio attrezzato',
+    body: 'Tre piani sotto la villa. Per le cose, per le bici, per il vino.',
   },
 ]
 
 type StackVarStyle = CSSProperties & { '--stack-i': number }
 
 export default function Units() {
-  const lenis = useLenis()
   const sectionRef = useRef<HTMLElement>(null)
   const cardsRef = useRef<HTMLElement[]>([])
 
   const setCardRef = (el: HTMLElement | null, i: number) => {
     if (el) cardsRef.current[i] = el
-  }
-
-  const handleAnchor = (e: MouseEvent<HTMLAnchorElement>, target: string) => {
-    e.preventDefault()
-    lenis?.scrollTo(target, { offset: -80, duration: 1.4 })
   }
 
   useGSAP(
@@ -112,25 +104,25 @@ export default function Units() {
   return (
     <section className="units-section" id="residenze" ref={sectionRef}>
       <div className="units-head reveal">
-        <div className="eyebrow">Le Tipologie</div>
+        <div className="eyebrow">Le zone</div>
         <h2 className="section-title">
-          Quattro tagli, dodici esemplari,
+          Una sola villa.
           <br />
-          <span className="ital">una sola idea di abitare</span>.
+          <span className="ital">Cinque ritmi</span>.
         </h2>
       </div>
 
       <div className="units-stack">
-        {UNITS.map((u, i) => (
+        {ZONES.map((z, i) => (
           <article
-            key={u.num}
+            key={z.num}
             ref={(el) => setCardRef(el, i)}
             className="unit-card"
             style={{ '--stack-i': i } as StackVarStyle}
           >
             <div className="unit-image-wrap">
-              {u.img ? (
-                <img src={u.img} alt={u.imgAlt} loading="lazy" />
+              {z.img ? (
+                <img src={z.img} alt={z.imgAlt} loading="lazy" />
               ) : (
                 <div className="ph-int">
                   <span className="ph-tag">Render in arrivo</span>
@@ -138,28 +130,17 @@ export default function Units() {
               )}
             </div>
             <div className="unit-body">
-              <div className="unit-eyebrow">— {u.num}</div>
-              <h3 className="unit-name serif ital">{u.name}</h3>
-              <p className="unit-specs">{u.specs}</p>
-              <p className="unit-price">
-                <span className="unit-price__label">da</span>
-                <span className="unit-price__value">€ {u.price}</span>
-              </p>
-              <p className="unit-desc">{u.body}</p>
-              <a
-                href="#contatti"
-                className="unit-cta"
-                onClick={(e) => handleAnchor(e, '#contatti')}
-              >
-                Richiedi info →
-              </a>
+              <div className="unit-eyebrow">— {z.num}</div>
+              <h3 className="unit-name serif ital">{z.name}</h3>
+              <p className="unit-specs">{z.specs}</p>
+              <p className="unit-desc">{z.body}</p>
             </div>
           </article>
         ))}
       </div>
 
       <p className="units-disclaimer reveal">
-        Metrature indicative. Distribuzioni interne, finiture e personalizzazioni concordate in fase di capitolato finale presso gli showroom convenzionati Home In Evolution (sede operativa Ranica, BG).
+        Metrature indicative. Distribuzione e finiture concordate in fase di capitolato presso showroom convenzionati Edilvertova SRL (sede operativa Gazzaniga, BG).
       </p>
     </section>
   )
