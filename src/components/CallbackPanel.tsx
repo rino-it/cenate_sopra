@@ -47,7 +47,7 @@ export default function CallbackPanel() {
           Quindici minuti, <span className="ital">senza impegni</span>.
         </h3>
         <p className="callback-sub">
-          Una breve chiamata conoscitiva per ricevere tutte le informazioni che ti servono. Senza proposte commerciali, senza pressioni — quando ti è comodo.
+          Una chiamata conoscitiva per ricevere tutte le informazioni che vi servono. Niente proposte commerciali, niente pressioni — quando vi è comodo.
         </p>
 
         {!done ? (
@@ -96,7 +96,7 @@ export default function CallbackPanel() {
           </form>
         ) : (
           <p className="callback-success">
-            Grazie. Giuseppe vi richiama nella fascia indicata.
+            Grazie. Il consulente vi richiama nella fascia indicata.
           </p>
         )}
       </div>
