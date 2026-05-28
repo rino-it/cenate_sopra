@@ -1,5 +1,6 @@
 import { type MouseEvent, useEffect, useState } from 'react'
 import { useLenis } from '../providers/SmoothScrollProvider'
+import { PROJECT_CONFIG } from '../lib/project-config'
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
@@ -20,14 +21,14 @@ export default function Nav() {
   return (
     <nav className={`nav${scrolled ? ' scrolled' : ''}`} id="nav">
       <div className="logo">
-        <img src="/images/logo/logo_edel.png" alt="EDEL Ponteranica" />
+        <img src={PROJECT_CONFIG.logoPath} alt={PROJECT_CONFIG.logoAlt} />
       </div>
       <a
         href="#contatti"
         className="nav-cta"
         onClick={(e) => handleAnchor(e, '#contatti')}
       >
-        Richiedi info
+        Ricevi il dossier
       </a>
     </nav>
   )
