@@ -6,21 +6,21 @@ export const PROJECT_CONFIG = {
   // Identità progetto
   projectName: 'Cenate Sopra',
   projectLocation: 'Cenate Sopra (BG)',
-  projectAddress: 'Via [da definire] · Cenate Sopra (BG)',
+  projectAddress: 'Via Varadelli · Cenate Sopra (BG)',
   builderName: 'Edilvertova SRL',
   builderTagline: 'dal 1969',
   builderFullLegal: 'Edilvertova SRL · Via IV Novembre 6, 24025 Gazzaniga (BG) · P.IVA / CF 00811260165 · CCIAA Bergamo',
 
   // Agenzia commercializzazione (placeholder finché non confermata)
-  agentName: '[Nome agente]',
-  agentPhone: '+39 000 000 0000',
-  agentPhoneHref: 'tel:+390000000000',
-  agentPhoneDisplay: '+39 000 000 0000',
-  agentEmail: 'contatti@example.com',
-  agentWhatsAppNumber: '390000000000',
+  agentName: 'Giulia',
+  agentPhone: '+393465746387',
+  agentPhoneHref: 'tel:+393465746387',
+  agentPhoneDisplay: '+39 346 574 6387',
+  agentEmail: 'bg2e3@tecnorete.it',
+  agentWhatsAppNumber: '393465746387',
   agentHours: 'Lun–Ven · 9:00–19:30',
-  agencyAddress: '[Indirizzo studio]',
-  agencyCity: '[Città]',
+  agencyAddress: '[Via Ospedale, 1, 24069]',
+  agencyCity: '[Trescore Balneario (BG)]',
 
   // Asset
   logoPath: '/images/logo/logo_cenate_sopra.png',
