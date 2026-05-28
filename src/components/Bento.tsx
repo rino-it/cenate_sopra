@@ -13,70 +13,70 @@ type Card = {
 const CARDS: Card[] = [
   {
     num: '01',
-    label: 'Strutture',
-    img: '/images/bento/bento-dettaglio.webp',
-    alt: 'Dettaglio architettonico EDEL — patio e ringhiere',
+    label: 'Mattina',
+    img: '/images/bento/bento-mattina.webp',
+    alt: 'Cucina open space con isola, luce mattutina',
     title: (
       <>
-        Strutture sopra la norma <span className="ital">antisismica Cl. 4</span>
+        La cucina che sta <span className="ital">sveglia con voi</span>
       </>
     ),
-    intro: 'Pensate per resistere. Per durare.',
+    intro: 'Doppia esposizione. Luce da est, vetrate a tutta altezza.',
     bullets: [
-      'Calcestruzzo Penetron impermeabile permanente',
-      'Murature Ytong portanti — U ≤ 0,18 W/m²K',
-      'Fondazioni oltre i requisiti di legge',
+      'Open space ~38 m² con isola centrale',
+      'Dispensa walk-in, doppio forno, piano induzione',
+      'Affaccio diretto sul giardino e sulla colazione',
     ],
   },
   {
     num: '02',
-    label: 'Energia',
-    img: '/images/bento/bento-giardino.webp',
-    alt: 'Giardino privato EDEL — verde e zona relax',
+    label: 'Pomeriggio',
+    img: '/images/bento/bento-pomeriggio.webp',
+    alt: 'Soggiorno a doppia altezza con vetrate scorrevoli',
     title: (
       <>
-        Energia che <span className="ital">si paga da sola</span>
+        L'altezza che vi fa <span className="ital">respirare</span>
       </>
     ),
-    intro: 'Bollette quasi azzerate, comfort tutto l\'anno.',
+    intro: 'Soggiorno a doppia altezza, vetrate scorrevoli a tutta parete.',
     bullets: [
-      'Classe A4 — pompa di calore Immergas autonoma',
-      'Pavimento radiante Rehau Speed',
-      'Fotovoltaico 3 kW espandibile + predisposizione accumulo',
+      'Living ~65 m², altezza 6 m',
+      'Camino centrale, parete TV a scomparsa',
+      'Patio interno a doppia altezza',
     ],
   },
   {
     num: '03',
-    label: 'Domotica',
-    img: '/images/bento/bento-piazza.webp',
-    alt: 'Spazi comuni EDEL — piazza interna',
+    label: 'Sera',
+    img: '/images/bento/bento-sera.webp',
+    alt: 'Piscina riscaldata vista valle al tramonto',
     title: (
       <>
-        Domotica <span className="ital">che non spaventa</span>
+        L'acqua <span className="ital">di casa</span>
       </>
     ),
-    intro: 'Smart quando serve, semplice quando vuoi.',
+    intro: 'Piscina, SPA privata, palestra. La fine giornata che si scrive da sola.',
     bullets: [
-      'BTicino Living Now livello 3, app Home+ Control',
-      'Luci, tapparelle e oscuranti motorizzati',
-      'Videocitofono Linea 3000 con WiFi',
+      'Piscina riscaldata 12×4 m, vista valle',
+      'Sauna finlandese, bagno turco, palestra dedicata',
+      'Pavimentazione esterna in pietra di Sarnico',
     ],
   },
   {
     num: '04',
-    label: 'Capitolato',
-    img: '/images/bento/bento-terrazza.webp',
-    alt: 'Terrazza attico EDEL — vista colline',
+    label: 'Notte',
+    img: '/images/bento/bento-notte.webp',
+    alt: 'Giardino e parco notturno con illuminazione scenica',
     title: (
       <>
-        Capitolato <span className="ital">aperto</span>
+        Il giardino come <span className="ital">quarta stanza</span>
       </>
     ),
-    intro: 'Si scelgono insieme nelle showroom convenzionate.',
+    intro: 'Lotto ~2.500 m², illuminazione scenica, accesso privato.',
     bullets: [
-      'Garofoli (porte), Grohe (rubinetterie), Ideal Standard (sanitari)',
-      'Parquet rovere prefinito 14 mm',
-      "Personalizzazioni in corso d'opera",
+      'Parco con essenze autoctone, pergolato in legno',
+      'Cancello motorizzato, accesso carrabile dedicato',
+      'Distanza dai vicini oltre 30 m su 3 lati',
     ],
   },
 ]
@@ -85,11 +85,11 @@ export default function Bento() {
   return (
     <section className="bento-section" id="progetto">
       <div className="bento-head reveal">
-        <div className="eyebrow">Qualità Costruttiva</div>
+        <div className="eyebrow">Vivere qui</div>
         <h2 className="section-title">
-          Quattro motivi per scegliere
+          Quattro capitoli
           <br />
-          <span className="ital">EDEL</span>.
+          <span className="ital">di una sola giornata</span>.
         </h2>
       </div>
       <div className="bento-grid bento-grid-4">
