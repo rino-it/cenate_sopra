@@ -4,17 +4,17 @@ export default function Vista() {
       <div className="vista-bg">
         <img
           src="/images/vista/vista-panoramica.jpg"
-          alt="Vista panoramica EDEL — colline di Ponteranica e campagna aperta"
+          alt="Vista panoramica Villa Cenate Sopra — colline di Val Cavallina e pianura bergamasca"
           loading="lazy"
         />
       </div>
       <div className="vista-content">
         <p className="vista-eyebrow">La vista</p>
         <h2 className="vista-title">
-          Bergamo Alta è là sotto. <span className="ital">Voi siete sopra</span>.
+          La pianura davanti. Le Orobie alle spalle. <span className="ital">Voi nel mezzo</span>.
         </h2>
         <p className="vista-body">
-          A Ponteranica la collina inizia dove la città finisce. Otto minuti dal centro. Il silenzio dei colli a portata di sguardo.
+          A Cenate Sopra la collina diventa terrazza. Venticinque minuti da Bergamo, ottanta passi dal silenzio.
         </p>
       </div>
     </section>
