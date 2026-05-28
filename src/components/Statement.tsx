@@ -4,14 +4,14 @@ export default function Statement() {
       <div className="reveal">
         <div className="eyebrow">Il Progetto</div>
         <h2 className="statement-text">
-          Non un investimento. <span className="ital">Una decisione</span>.
+          Non si compra una villa. <span className="ital">Si sceglie una vita</span>.
           <br />
-          Dodici case fatte come si deve, sopra Bergamo,
+          Una sola, sopra Bergamo, sulle colline di Cenate Sopra,
           <br />
-          da una famiglia che costruisce qui <span className="ital">dal 1962</span>.
+          fatta per durare il tempo dei figli.
         </h2>
         <p className="statement-body">
-          Sessant'anni di cantieri tra Bergamo e provincia. Dodici unità. Una scelta che dura.
+          Sessant'anni di cantieri bergamaschi. Una villa. Una scelta che dura.
         </p>
       </div>
     </section>
