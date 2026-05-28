@@ -40,19 +40,21 @@ export default function Hero() {
       <div className="hero-bg">
         <img
           src="/images/hero/hero-main.jpg"
-          alt="Vista aerea EDEL Ponteranica — render esterno frontale"
+          alt="Render esterno Villa Cenate Sopra — vista frontale collinare"
           loading="eager"
           fetchPriority="high"
         />
       </div>
       <div className="hero-inner">
         <h1 className="serif hero-title">
-          L'ultima volta che sceglierete <span className="ital">dove abitare</span>.
+          Sopra Bergamo, una villa <span className="ital">fatta per restarci</span>.
+          <br />
+          Vent'anni davanti. Una sola scelta.
         </h1>
         <p className="hero-sub hero-sub-meta">
-          <span className="hero-trust-dot">●</span> 12 Unità · Classe A4 · Sismica Cl.4
+          <span className="hero-trust-dot">●</span> Cenate Sopra · Bergamo · Classe A4
           <br />
-          EDEL · Ponteranica
+          Una villa
         </p>
         <div className="hero-cta-row">
           <a
@@ -62,18 +64,17 @@ export default function Hero() {
             onMouseMove={handleMagneticMove}
             onMouseLeave={handleMagneticLeave}
           >
-            Richiedi un appuntamento privato
+            Ricevi il dossier
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
               <path d="M5 12h14M13 6l6 6-6 6" />
             </svg>
           </a>
           <a
-            href="/brochure-edel.pdf"
+            href="#callback"
             className="btn-ghost"
-            target="_blank"
-            rel="noopener noreferrer"
+            onClick={(e) => handleAnchor(e, '#callback')}
           >
-            Scarica la brochure
+            Parla con il consulente
           </a>
         </div>
       </div>
