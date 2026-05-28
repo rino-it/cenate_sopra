@@ -1147,8 +1147,8 @@ body::before {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 80px 22px 60px;
-  gap: 32px;
+  padding: 120px 22px 60px;
+  gap: 28px;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -1156,6 +1156,7 @@ body::before {
 .finishes-cube__head {
   text-align: center;
   max-width: 720px;
+  margin-bottom: 8px;
 }
 
 .finishes-cube__head .eyebrow {
@@ -1167,8 +1168,8 @@ body::before {
 }
 
 .cube-stage {
-  --cube-w: min(86vw, 520px);
-  --cube-h: min(58vh, 540px);
+  --cube-w: min(80vw, 460px);
+  --cube-h: min(46vh, 420px);
   width: var(--cube-w);
   height: var(--cube-h);
   perspective: 1400px;
